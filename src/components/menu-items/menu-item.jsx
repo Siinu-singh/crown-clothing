@@ -1,9 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router'; // Import useNavigate hook
 import './menu-item.scss';
 
-const MenuItem = ({ title, imageUrl, size }) => {
+
+const MenuItem = ({ title, imageUrl, size, linkUrl }) => {
+    const navigate = useNavigate(); // Initialize navigate function
+
     return (
-        <div className={`${size} menu-item`}>
+        <div
+            className={`${size} menu-item`}
+            onClick={() => navigate(linkUrl)} // Use navigate instead of history.push
+        >
             <div
                 className="background-image"
                 style={{
