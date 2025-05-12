@@ -2,7 +2,7 @@ import React from 'react';
 import MenuItem from '../menu-items/menu-item';
 import './directory-menu.scss'; // Corrected import path
 
-class Directory extends React.Component { // Fixed typo
+class Directory extends React.Component { 
     constructor() {
         super();
         this.state = {

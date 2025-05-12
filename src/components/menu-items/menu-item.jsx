@@ -9,7 +9,7 @@ const MenuItem = ({ title, imageUrl, size, linkUrl }) => {
     return (
         <div
             className={`${size} menu-item`}
-            onClick={() => navigate(linkUrl)} // Use navigate instead of history.push
+            onClick={() => navigate(linkUrl)}
         >
             <div
                 className="background-image"
