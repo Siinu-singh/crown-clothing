@@ -6,7 +6,7 @@ import { Routes, Route } from 'react-router-dom'; // Changed import
 import Shop from './components/pages/shop/shop.jsx';
 import Header from './components/header/header.jsx';
 import SignInSignUp from './components/pages/sign-in-sign-up/sign-in-sign-up.jsx';
-import {auth} from './firebase/firebase.util.js';
+import {auth, createUserProfileDocument} from './firebase/firebase.util.js';
 
 
 class App extends React.Component {
@@ -20,8 +20,8 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+      createUserProfileDocument(user);
       console.log('currentUser');
       console.log(user);
     });
