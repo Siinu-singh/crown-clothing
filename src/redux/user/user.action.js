@@ -1,5 +1,6 @@
+import {UserActionTypes} from './user.types'
 export const setCurrentUser = user => ({
-    type: 'SET_CURRENT_USER',
+    type: UserActionTypes.SET_CURRENT_USER,
     payload: user
 });
 // This action creator is used to set the current user in the Redux store.
